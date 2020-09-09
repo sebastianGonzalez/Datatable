@@ -1,0 +1,46 @@
+<div class="mat-elevation-z8">
+  <table mat-table [dataSource]="dataSource">
+
+    <!-- Columna de Fecha -->
+    <ng-container matColumnDef="Fecha">
+      <th mat-header-cell *matHeaderCellDef> Fecha </th>
+      <td mat-cell *matCellDef="let element"> {{element.Fecha}} </td>
+    </ng-container>
+
+    <!-- Columna de Estado -->
+    <ng-container matColumnDef="Estado">
+      <th mat-header-cell *matHeaderCellDef> Estado </th>
+      <td mat-cell *matCellDef="let element"> {{element.Estado}} </td>
+    </ng-container>
+
+    <!-- Columna de Numero -->
+    <ng-container matColumnDef="Numero">
+      <th mat-header-cell *matHeaderCellDef> Numero </th>
+      <td mat-cell *matCellDef="let element"> {{element.Numero}} </td>
+    </ng-container>
+
+    <!-- Columna de Titulo -->
+    <ng-container matColumnDef="Titulo">
+      <th mat-header-cell *matHeaderCellDef> Titulo </th>
+      <td mat-cell *matCellDef="let element"> {{element.Titulo}} </td>
+    </ng-container>
+
+    <!-- Columna de Opcion -->
+    <ng-container matColumnDef="Opcion">
+      <th mat-header-cell *matHeaderCellDef> Opcion </th>
+      <td mat-cell *matCellDef="let element"> {{element.Opcion}} </td>
+      <input type="checkbox">
+    </ng-container>
+
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+  </table>
+
+ <button mat-flat-button color = 'accent'>
+  Agregar
+  </button>
+
+  <mat-paginator [pageSizeOptions]="[5, 10, 20]" showFirstLastButtons></mat-paginator>
+
+
+</div>
